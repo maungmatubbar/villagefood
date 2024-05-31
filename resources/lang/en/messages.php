@@ -1,0 +1,30 @@
+<?php
+
+return [
+    'Village Foods'=> 'Village Foods',
+    'home' => 'Home',
+    'shop' => 'Shop',
+    'customer' => 'Customer',
+    'login' => 'Login',
+    'about_us' => 'About Us',
+    'blog' => 'Blog',
+    'contact' => 'Contact',
+    'seller' => 'Seller',
+    'Categories' => 'Categories',
+    'FREE SHIPPING' => 'ALWAYS FRESH',
+    'ALWAYS FRESH' => 'ALWAYS FRESH',
+    'SUPERIOR QUALITY' => 'SUPERIOR QUALITY',
+    'SUPPORT' => 'SUPPORT',
+    'Our Products' => 'Our Products',
+    'Our satisfied customer says' => 'Our satisfied customer says',
+    'Testimony' => 'Testimony',
+    'We serve Fresh Vegestables &amp; Fruits' => 'We serve Fresh Vegestables & Fruits',
+    'We deliver organic vegetables &amp; fruits' => 'We deliver organic vegetables & fruits',
+    'View Details'=> 'View Details',
+    'Product Details'=> 'Product Details',
+    'Related Products'=> 'Related Products',
+    'Best Price For You'=> 'Best Price For You',
+    'Deal of the day'=> 'Deal of the day',
+    '100% Fresh &amp; Organic Foods'=> '100% Fresh & Organic Foods',
+
+];
