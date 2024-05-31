@@ -12,6 +12,7 @@ class InvoiceController extends Controller
 
     public function index()
     {
-        $invoices = Invoice::with('address','user','orders')->get();
+        $invoices = Invoice::with('address','user')->get();
+        return view('backend.pages.invoice.invoice_list',compact('invoices'));
     }
 }

@@ -47,6 +47,11 @@
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Orders</span></a>
         </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ route('invoice.list') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Invoice</span></a>
+    </li>
 
 
 

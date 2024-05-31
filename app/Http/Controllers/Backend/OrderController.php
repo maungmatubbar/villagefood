@@ -10,7 +10,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $orders = Order::with(['product','invoice','address'])->get();
+        $orders = Order::with(['product','invoice','address','user'])->get();
 
         return view('backend.pages.orders.orders', compact('orders'));
     }

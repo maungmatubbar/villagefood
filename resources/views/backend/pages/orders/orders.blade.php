@@ -27,6 +27,8 @@
                     <thead>
                     <tr>
                         <th>Invoice No</th>
+                        <th>Publisher</th>
+                        <th>User Info</th>
                         <th>Address</th>
                         <th>Product Name</th>
                         <th>Image</th>
@@ -41,6 +43,16 @@
                     @foreach($orders as $order)
                         <tr>
                             <td>{{ $order->invoice->invoice_no }}</td>
+                            <td>
+                                <p>User: <span>{{ $order->product->user->name }}</span></p>
+                                <p>Email: <span>{{ $order->product->user->email }}</span></p>
+                                <p>Phone: <span>{{ $order->product->user->phone_number }}</span></p>
+                            </td>
+                            <td>
+                                <p>User Name: <span class="text-primary"> {{ $order->user->name }}</span></p>
+                                <p>Email: <span class="text-primary">{{ $order->user->email }}</span></p>
+                                <p>Phone: <span class="text-primary">{{ $order->user->phone }}</span></p>
+                            </td>
                             <td>
                                 <p>{{ $order?->address?->district }}</p>
                                 <p>{{ $order?->address?->address }}</p>
