@@ -10,8 +10,48 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\Frontend\CustomerDashboardController;
 use App\Http\Controllers\Frontend\CustomerController;
 use App\Http\Controllers\Frontend\OrderController;
+use App\Http\Controllers\Payment\BkashPaymentController;
 
+/*class PersonChild{
+
+}
+class PersonAddress
+{
+    public PersonChild $personChild;
+
+    public function __construct(PersonChild $personChild)
+    {
+
+        $this->personChild = $personChild;
+    }
+    public function getAddress():string
+    {
+        return "Dhaka, Bangladesh";
+    }
+}
+class Person
+{
+    public PersonAddress $personAddress;
+
+    public function __construct(PersonAddress $personAddress)
+    {
+
+        $this->personAddress = $personAddress;
+    }
+    public function getName():string
+    {
+        return "Person";
+    }
+}*/
+/*app()->bind('rest',function (){
+    return new Person(new PersonAddress());
+});
+dd(app()->make('rest')->personAddress->getAddress());*/
+//dd(resolve('Person'));
+//dd(app());
 // Frontend routes
+
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
@@ -41,6 +81,8 @@ Route::middleware('customer')->group(function (){
     Route::post('/order-place',[OrderController::class,'placeOrder'])->name('place.order');
     Route::get('/order-complete/{invoiceNo}',[OrderController::class,'orderComplete'])->name('order.complete');
     //
+   // Route::post('/bkash/payment/create', [BkashPaymentController::class, 'createPayment'])->name('bkash.create');
+    Route::get('/bkash/payment/callback', [BkashPaymentController::class, 'callback'])->name('bkash.callback');
     Route::get('/customer-dashboard',[CustomerDashboardController::class,'dashboard'])->name('customer.dashboard');
 
 });

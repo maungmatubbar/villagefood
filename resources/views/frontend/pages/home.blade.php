@@ -365,6 +365,10 @@
                 console.log(productId);
                 $.ajax({
                     url:'{{ route('add.to.cart') }}',
+                    headers: {
+                        "Accept": "application/json",
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                    },
                     method: "POST",
                     data:{
                         _token: '{{ csrf_token() }}',

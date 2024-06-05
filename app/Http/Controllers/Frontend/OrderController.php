@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Billings\PaymentServices\BkashService;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Payment\BkashPaymentController;
 use App\Models\Invoice;
 use App\Models\Order;
 use App\Models\Product;
@@ -16,7 +18,8 @@ use Illuminate\Support\Str;
 class OrderController extends Controller
 {
 
-    public function checkout(Request $request)
+
+    public function checkout()
     {
         return view('frontend.pages.checkout');
     }
@@ -74,6 +77,18 @@ class OrderController extends Controller
         }
         Cart::destroy();
         DB::commit();
+
+        if($request->payment_method === 'online'){
+/*            $amount =  $invoice->total_price; //$request->input('amount');
+            $invoice = uniqid();
+
+            $response = $this->bkashService->createPayment($amount, $invoice);
+            if (isset($response['bkashURL'])) {
+                return redirect()->away($response['bkashURL']);
+            }
+            notyf()->warning('Payment Failed!.');
+            return back()->withErrors('Failed to initiate payment.');*/
+        }
         notyf()->success('Order placed successfully!.');
         return redirect()->route('order.complete',['invoiceNo'=>$invoice->invoice_no]);
     }
